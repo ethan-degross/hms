@@ -4,6 +4,8 @@ import { endpoint } from '../src/config'
 import { getSite } from '../src/index'
 
 chai.use(require('chai-url'))
+chai.use(require('chai-json'))
+
 
 describe('Endpoint', () => {
     it('tests endpoint exists', () => {
@@ -19,7 +21,8 @@ describe('Endpoint', () => {
 
 describe('Get Site', () => {
     it('tests getting site information', () => {
-        expect(getSite).to.exist
+        expect(getSite(endpoint)).to.exist
+        expect(getSite(endpoint)).to.be.jsonObj()
     })
 })
 

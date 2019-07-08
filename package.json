@@ -25,6 +25,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "chai": "^4.2.0",
     "chai-url": "^1.0.4",
+    "chai-json": "^1.0.0",
     "documentation": "^8.1.2",
     "mocha": "^5.2.0",
     "webpack": "^4.28.4",
@@ -47,7 +48,6 @@
     ]
   },
   "dependencies": {
-    "babel": "^6.23.0",
     "node-fetch": "^2.6.0"
   }
 }
