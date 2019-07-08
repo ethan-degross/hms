@@ -1,11 +1,14 @@
 import Fetch from 'node-fetch'
 import { endpoint } from '../src/config'
 
-export function getSiteInfo(endpoint) {
-    let api = endpoint + 'site'
-    Fetch(endpoint).then((data) => {
-        return data
-    })
-}
-let test = getSiteInfo(endpoint)
-console.log(test)
+let url = endpoint + 'site'
+
+export const getSite = async url => {
+    try {
+      const response = await Fetch(url)
+      const json = await response.json()
+      console.log(json)
+    } catch (error) {
+      console.log(error)
+    }
+  }
