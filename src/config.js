@@ -1,1 +1,1 @@
-export const endpoint = `http://s-lib018.lib.uiowa.edu/soteriou_omeka`
+export const endpoint = `http://s-lib018.lib.uiowa.edu/soteriou_omeka/api/`
