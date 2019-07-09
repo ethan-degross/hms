@@ -1,8 +1,8 @@
 import chai from 'chai'
 import { expect } from 'chai'
 import { endpoint } from '../src/config'
-import { getSiteInfo, getCollections, hasCollections } from '../src/index'
-import { mockEmptyCollections, mockCollections} from './mock-data'
+import { getSiteInfo, getCollections, hasCollections, hasItems, getItems } from '../src/index'
+import { mockEmptyCollections, mockCollections, mockItems, mockEmptyItems} from './mock-data'
 chai.use(require('chai-url'))
 
 describe('Endpoint', () => {
@@ -38,3 +38,15 @@ describe('Get Collections', () => {
     })
 })
 
+describe('Get Items', () => {
+    it('tests getting site items', () => {
+        return getItems(endpoint).then((data) => {
+            expect(data).to.be.an('array')
+        })
+    })
+    it('tests if there are items', () => {
+        expect(hasItems(mockEmptyItems)).to.be.false
+        expect(hasItems(mockItems)).to.be.true
+        expect(mockItems).to.be.an('array')
+    })  
+})
