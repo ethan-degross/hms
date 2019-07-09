@@ -1,11 +1,8 @@
 import chai from 'chai'
 import { expect } from 'chai'
 import { endpoint } from '../src/config'
-import { getSite } from '../src/index'
-
+import { getSiteInfo } from '../src/index'
 chai.use(require('chai-url'))
-chai.use(require('chai-json'))
-
 
 describe('Endpoint', () => {
     it('tests endpoint exists', () => {
@@ -21,8 +18,9 @@ describe('Endpoint', () => {
 
 describe('Get Site', () => {
     it('tests getting site information', () => {
-        expect(getSite(endpoint)).to.exist
-        expect(getSite(endpoint)).to.be.jsonObj()
+        return getSiteInfo(endpoint).then((data) => {                
+            expect(data).to.have.all.keys('omeka_url', 'author', 'copyright', 'description', 'omeka_version', 'title')
+        })       
     })
 })
 

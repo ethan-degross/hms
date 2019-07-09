@@ -8,7 +8,7 @@ import { endpoint } from '../src/config'
  * @param {string} endpoint - An Omeka API URL
  * @return {object} - Returns a valid JSON representaton of the site information
  */
-export async function getSite(endpoint) {
+export async function getSiteInfo(endpoint) {
     let url = endpoint + 'site'
     try {
         const response = await Fetch(url)
