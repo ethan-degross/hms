@@ -1,7 +1,6 @@
 import Fetch from 'node-fetch'
 import { endpoint } from '../src/config'
 
-
 /**
  * Gets site information for a specified Omeka API endpoint
  *
@@ -17,4 +16,35 @@ export async function getSiteInfo(endpoint) {
       } catch (error) {
         console.log(error)
       }
+}
+
+/**
+ * Gets a list of site collections
+ *
+ * @param {string} endpoint - An Omeka API URL
+ * @return {array} - Returns an array of collections belonging to individual sites
+ */
+export async function getCollections(endpoint) {
+  let url = endpoint + 'collections'
+  try {
+    const response = await Fetch(url)
+    const json = await response.json()
+    return json
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+/**
+ * Checks if a collection array is empty
+ *
+ * @param {array} collectionList - An array of collection objects
+ * @return {boolean} - Returns false if the array is empty, true if it has an collection objects
+ */
+export function hasCollections(collectionList) {
+  if (collectionList.length == 0) {
+    return false
+  } else {
+    return true
+  }
 }

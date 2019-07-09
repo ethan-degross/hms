@@ -26,9 +26,29 @@
               
                 
                 <li><a
-                  href='#getsite'
+                  href='#getsiteinfo'
                   class="">
-                  getSite
+                  getSiteInfo
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#getcollections'
+                  class="">
+                  getCollections
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#hascollections'
+                  class="">
+                  hasCollections
                   
                 </a>
                 
@@ -49,8 +69,8 @@
   
   <div class='clearfix'>
     
-    <h3 class='fl m0' id='getsite'>
-      getSite
+    <h3 class='fl m0' id='getsiteinfo'>
+      getSiteInfo
     </h3>
     
     
@@ -61,7 +81,7 @@
 
  
   
-    <div class='pre p1 fill-light mt0'>getSite(endpoint: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></div>
+    <div class='pre p1 fill-light mt0'>getSiteInfo(endpoint: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></div>
    
   
   
@@ -96,6 +116,146 @@
       <div class='py1 quiet mt1 prose-big'>Returns</div>
       <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></code>:
         Returns a valid JSON representaton of the site information
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='getcollections'>
+      getCollections
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Gets a list of site collections</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>getCollections(endpoint: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">array</a></div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>endpoint</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    An Omeka API URL
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">array</a></code>:
+        Returns an array of collections belonging to individual sites
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='hascollections'>
+      hasCollections
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Checks if a collection array is empty</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>hasCollections(collectionList: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">array</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>collectionList</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">array</a>)</code>
+	    An array of collection objects
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>:
+        Returns false if the array is empty, true if it has an collection objects
 
       
     

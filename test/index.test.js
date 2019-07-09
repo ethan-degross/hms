@@ -1,7 +1,8 @@
 import chai from 'chai'
 import { expect } from 'chai'
 import { endpoint } from '../src/config'
-import { getSiteInfo } from '../src/index'
+import { getSiteInfo, getCollections, hasCollections } from '../src/index'
+import { mockEmptyCollections, mockCollections} from './mock-data'
 chai.use(require('chai-url'))
 
 describe('Endpoint', () => {
@@ -21,6 +22,19 @@ describe('Get Site', () => {
         return getSiteInfo(endpoint).then((data) => {                
             expect(data).to.have.all.keys('omeka_url', 'author', 'copyright', 'description', 'omeka_version', 'title')
         })       
+    })
+})
+
+describe('Get Collections', () => {
+    it('tests getting site collections', () => {
+        return getCollections(endpoint).then((data) => {
+            expect(data).to.be.an('array')
+        })
+    })
+    it('tests if there are collections', () => {
+        expect(hasCollections(mockEmptyCollections)).to.be.false
+        expect(hasCollections(mockCollections)).to.be.true
+        expect(mockCollections).to.be.an('array')
     })
 })
 
