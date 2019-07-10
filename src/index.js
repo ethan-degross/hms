@@ -64,10 +64,10 @@ export function hasItems(itemList) {
 }
 
 /**
- * Gets a list of site items
+ * Gets a list of ALL site items
  *
- * @param {array} itemList - An array of item objects
- * @return {promise} - Returns false if the array is empty, true if it has an item object(s)
+ * @param {string} endpoint - An Omeka API URL
+ * @return {promise} - Returns a list of item objects
  */
 export async function getItems(endpoint) {
   let url = endpoint + 'collections'
@@ -78,4 +78,43 @@ export async function getItems(endpoint) {
   } catch (error) {
     console.log(error)
   }
+}
+
+/**
+ * Gets the collection's metadata
+ *
+ * @param {string} endpoint - An omeka API URL
+ * @param {number} id - A collection id
+ * @return {promise} - Returns collection metadata
+ */
+export async function getCollectionMetadataById(endpoint, id) {
+  if (typeof id == 'number') {  
+    let url = endpoint + 'collections/' + id
+    try {
+      const response = await Fetch(url)
+      const json = await response.json()
+      return json
+    } catch(error) {
+      console.log(error)
+    }
+  } else {
+    throw "The value provided must be a an id."
+  }
+}
+
+/**
+ * Gets items from the collection
+ *
+ * @param {string} endpoint - An omeka API URL
+ * @param {number} id - A collection id
+ * @return {promise} - An array of item objects
+ */
+export async function getItemsInCollection(endpoint, id) {
+  let collection = getCollectionMetadataById(endpoint, id)
+  let data = await Promise.resolve(collection)
+  let path = data.items.url
+  let response = await Fetch(path)
+  let json = await response.json()
+  let items = await Promise.resolve(json)
+  return items
 }
