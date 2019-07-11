@@ -1,5 +1,5 @@
-# skeleton
-A barebones starter project for modern javascript development
+# Headless Management System
+A Library for interacting with the Omeka CMS
 
 babel + webpack + mocha + chai + documentationjs
 
