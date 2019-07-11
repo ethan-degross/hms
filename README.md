@@ -1,6 +1,8 @@
 # Headless Management System
 A Library for interacting with the Omeka CMS
 
+https://ethan-degross.github.io/hms/
+
 babel + webpack + mocha + chai + documentationjs
 
 `npm start` - compile source and run dev server
