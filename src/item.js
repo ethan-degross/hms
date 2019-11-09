@@ -4,7 +4,7 @@
  */
 
 import Fetch from 'node-fetch'
-import { endpoint } from '../src/config'
+import { endpoint } from '../endpoint'
 
 /**
  * Gets a list of ALL site items
@@ -23,6 +23,24 @@ export async function getItems(endpoint) {
       console.log(error)
     }
   }
+
+  /**
+ * Gets a list of collection items
+ *
+ * @param {string} collectionEndpoint - An Omeka API URL
+ * @memberof Item
+ * @return {promise} - Returns a list of item objects
+ */
+export async function getItemsInCollection(collectionEndpoint) {
+  let url = collectionEndpoint
+  try {
+    const response = await Fetch(url)
+    const json = await response.json()
+    return json
+  } catch (error) {
+    console.log(error)
+  }
+}
 
 /**
  * Checks if the list has items

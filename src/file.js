@@ -4,4 +4,4 @@
  */
 
 import Fetch from 'node-fetch'
-import { endpoint } from '../src/config'
+import { endpoint } from '../endpoint'

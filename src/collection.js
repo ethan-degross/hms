@@ -4,7 +4,7 @@
  */
 
 import Fetch from 'node-fetch'
-import { endpoint } from '../src/config'
+import { endpoint } from '../endpoint'
 
 /**
  * Gets a list of site collections
